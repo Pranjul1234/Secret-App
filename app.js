@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+mongoose.connect("mongodb+srv://Pranjul1447:Pranjul%40123@abhimongo.o5iq8su.mongodb.net/Secret-UserDB");
 
 const userSchema = new mongoose.Schema({
     username: { type: String, unique: true },
@@ -233,7 +233,7 @@ app.post("/submit", function (req, res) {
 
 
 
-app.listen(3000, function () {
+app.listen( process.env.PORT || 3000, function () {
     console.log("server has started on port 3000");
 });
 
